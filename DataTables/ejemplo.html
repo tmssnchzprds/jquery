@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejemplo con DataTable</title>
+<link rel="stylesheet" href="media/css/jquery.dataTables.css">
+
+
+<script type="text/javascript" src="media/js/jquery.js"></script>
+<script type="text/javascript" src="media/js/jquery.dataTables.js"></script>
+<script>
+	$(document).ready(function() {
+        
+		$("#tabla").dataTable( {
+        "language": {
+            "lengthMenu": "Mostrando _MENU_ registros por pagina",
+            "zeroRecords": "Ningun registro encontrado",
+            "info": "Mostrando paginas _PAGE_ de _PAGES_",
+            "infoEmpty": "Ningun registro disponible",
+            "search":"Buscar",
+            "paginate": {
+                          "first":"Primero",
+                          "last":"Ultimo",
+                          "next":"Siguiente",
+                          "previous":"Anterior"
+                        },
+            "infoFiltered": "(filtrando de _MAX_ registros totales)"
+        },"lengthMenu": [ 5, 10, 20 ]
+    } );
+		
+    });
+
+</script>
+</head>
+<body>
+
+<table id="tabla">
+	<thead>
+        	<tr>
+            	<th>Company</th>
+	            <th> Contact</th>
+    	        <th>Country</th>
+            </tr>
+    </thead>
+    <tbody>        
+            <tr id="pares">
+            	<td>Alfreds Futterkiste</td>
+	            <td>Maria Anders</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+            	<td>Berglunds snabböp</td>
+	            <td>Christina Berglund</td>
+                <td>Sweden</td>
+            </tr>
+            <tr id="pares">
+            	<td>Centro comercial Moctezuma</td>
+	            <td>Francisco Chang</td>
+                <td>Mexico</td>
+            </tr>
+            <tr> 
+            	<td>Ernst Handel</td>
+	            <td>Roland Mendel</td>
+                <td>Austria</td>
+            </tr>
+            <tr id="pares">
+            	<td>Island Trading</td>
+	            <td>Helen Bennett</td>
+                <td>UK</td>
+            </tr>
+             <tr id="pares">
+            	<td>Alfreds Futterkiste</td>
+	            <td>Maria Anders</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+            	<td>Berglunds snabböp</td>
+	            <td>Christina Berglund</td>
+                <td>Sweden</td>
+            </tr>
+            <tr id="pares">
+            	<td>Centro comercial Moctezuma</td>
+	            <td>Francisco Chang</td>
+                <td>Mexico</td>
+            </tr>
+            <tr> 
+            	<td>Ernst Handel</td>
+	            <td>Roland Mendel</td>
+                <td>Austria</td>
+            </tr>
+            <tr id="pares">
+            	<td>Island Trading</td>
+	            <td>Helen Bennett</td>
+                <td>UK</td>
+            </tr> <tr id="pares">
+            	<td>Alfreds Futterkiste</td>
+	            <td>Maria Anders</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+            	<td>Berglunds snabböp</td>
+	            <td>Christina Berglund</td>
+                <td>Sweden</td>
+            </tr>
+            <tr id="pares">
+            	<td>Centro comercial Moctezuma</td>
+	            <td>Francisco Chang</td>
+                <td>Mexico</td>
+            </tr>
+            <tr> 
+            	<td>Ernst Handel</td>
+	            <td>Roland Mendel</td>
+                <td>Austria</td>
+            </tr>
+            <tr id="pares">
+            	<td>Island Trading</td>
+	            <td>Helen Bennett</td>
+                <td>UK</td>
+            </tr> <tr id="pares">
+            	<td>Alfreds Futterkiste</td>
+	            <td>Maria Anders</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+            	<td>Berglunds snabböp</td>
+	            <td>Christina Berglund</td>
+                <td>Sweden</td>
+            </tr>
+            <tr id="pares">
+            	<td>Centro comercial Moctezuma</td>
+	            <td>Francisco Chang</td>
+                <td>Mexico</td>
+            </tr>
+            <tr> 
+            	<td>Ernst Handel</td>
+	            <td>Roland Mendel</td>
+                <td>Austria</td>
+            </tr>
+            <tr id="pares">
+            	<td>Island Trading</td>
+	            <td>Helen Bennett</td>
+                <td>UK</td>
+            </tr>
+    </tbody>        
+        </table>
+
+
+</body>
+</html>

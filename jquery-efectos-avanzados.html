@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Jquery Efectos avanzados de animaciones</title>
+<script type="text/javascript" src="jquery-1.9.1.js">
+</script>
+<script>
+$(document).ready(function() { 
+	$("#b1").click(function(){
+		$("#capa1").fadeIn(1000);
+		$("#capa2").slideDown(3000);
+		$("#capa2").slideUp(1000);
+		$("#capa3").fadeIn(100);
+		$("#capa3").animate({left:"200px",top:"200px",width:"200px",opacity:"0.5"})
+	});
+	$("#b2").click(function(){
+		$("div").fadeOut(2000);
+	});
+	$("#b3").click(function(){
+		$("#capa1").fadeToggle();
+		$("#capa2").fadeToggle(2000);
+		$("#capa3").fadeToggle("slow");
+	});
+	$("#b4").click(function(){
+		$("div").stop();
+	});
+});
+</script>
+<style type="text/css">
+
+#capa1 { width:80px;
+   		 height:80px;
+		 display:none;
+	     background-color:red;
+		
+}
+#capa2 { width:80px;
+   		 height:80px;
+		 display:none;
+	     background-color:green;
+		
+}
+#capa3 { width:80px;
+   		 height:80px;
+		 left:100px;
+		 top:0px;
+		 position:absolute;
+		 display:none;
+	     background-color:blue;
+		
+}
+
+</style>
+</head>
+<body>
+	<button id="b1">Comienza</button>
+   	<button id="b2">Oculta</button>
+  	<button id="b3">Alterna</button>
+    <button id="b4">Parar</button>
+    
+    <div id="capa1"></div>
+    <div id="capa2"></div>
+    <div id="capa3"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jqDnR.js"></script>
+<script type="text/javascript" src="dimensions.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('#ex1').jqResize('.jqResize');
+});
+</script>
+<style type="text/css">
+.jqHandle { background: red;
+            height:15px;}
+.jqDrag { width: 100%;
+          cursor: move;}
+.jqResize { width: 15px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            cursor: se-resize;}
+.jqDnR { z-index: 3;
+         position: relative;
+         width: 210px;
+         font-size: 0.87em;
+         color: black;
+         margin: 5px 10px 10px 10px;
+         padding: 8px;
+         background-color: #EEE;
+         border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<div id="ex1" class="jqDnR">
+Caja de ejemplo<br />
+Puede cambiar mi tamaño
+<div class="jqHandle jqResize"></div>
+</div>
+</body>
+</html>

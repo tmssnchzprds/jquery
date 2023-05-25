@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AJAX</title>
+<script type="text/javascript" src="jquery-1.9.1.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+	function antes(datos){
+		$("#loader").html('<img src="ajax-loader.gif">');			//$("#respuesta").html(datos.poblacion);
+		
+		};
+	function mostrar(datos) {
+		$.each(datos,function(propiedad,valor) {
+			$("#datos").append("<tr><td>"+propiedad+"</td><td>"+valor);
+			});
+		};
+	$("#paises").change(function(){
+	var paisSeleccionado=$(this).val();
+	$.ajax({
+		url:"paises-html.php",
+		type:"GET",
+		dataType:"html",
+		data:"pa="+paisSeleccionado,
+		//data:{pa:paisSeleccionado},
+		success: function(datos){
+			$("#respuesta").html(datos);
+			},
+		beforeSend:antes
+		//error:problemas,timeout:2000
+		});
+	/*	$.getJSON("paises-json-php","pa="+paisSeleccionado,mostrar);*/
+	});
+});
+</script>
+</head>
+
+<body>
+<select name="paises" id="paises">
+	<option>Selecciona un pais</option>
+    <option value="Chile">Chile</option>
+    <option value="Spain">España</option>
+    <option value="Brasil">Brasil</option>
+</select>
+<div id="respuesta">
+
+</div>
+<div id="loader"></div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Jquery Ejercicios</title>
+<script type="text/javascript" src="jquery-1.9.1.js">
+</script>
+<script>
+$(document).ready(function() {
+	$("#enviar").click(function(){
+		var v=$("#numero").val();
+		$.ajax({
+type: "POST",
+		dataType: "html",
+url:"ajaxcompleto.php",
+		data:"anio="+v,
+		beforeSend:inicioEnvio,
+		success:llegada,
+		timeout:4000,
+		error:problemas
+	}); 
+								
+function inicioEnvio()
+			{
+			$("#resultados").html('Cargando...');
+			}
+function llegada(datos)
+			{
+			 $("#resultados").text(datos);
+			}
+function problemas()
+			{
+			$("#resultados").text('Problemas en el servidor.');
+			}
+
+		});
+});
+</script>
+</head>
+<body>
+Dime que año es este:
+	<input type="text" name="anio" id="numero">
+	<input type="button" value="Y te digo cual es el siguiente" id="enviar">
+	<div id="resultados"></div>
+
+</body>
+</html>

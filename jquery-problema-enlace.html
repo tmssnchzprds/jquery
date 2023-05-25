@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Jquery Problema de enlace</title>
+<script type="text/javascript" src="jquery-1.9.1.js">
+</script>
+<script>
+$(document).ready(function() {
+    $("a").click(function(eventObject){
+		eventObject.preventDefault();
+		var idSeleccionado=$(this).attr("idProducto");
+		var nombreProducto=$(this).text()
+		$("#titulo").html(nombreProducto);
+		$("#codigo").html(idSeleccionado);		
+	});
+});
+</script>
+</head>
+<body>
+
+<table align="center" width="80%" border="1" bordercolor="#FF0000">
+	<tr><th>Nombre</th><th>Precio</th><th>Foto</th></tr>
+    <tr>
+    	<td>
+        	 <a href="detalle_producto.php" idProducto="1">Producto 1</a>
+        </td>
+        <td> xx €</td>
+        <td>
+        	
+        </td>
+    </tr>
+     <tr>
+    	<td>
+        	 <a href="detalle_producto.php" idProducto="2">Producto 2</a>
+        </td>
+        <td> xx €</td>
+        <td>
+        	
+        </td>
+    </tr> <tr>
+    	<td>
+        	 <a href="detalle_producto.php" idProducto="3">Producto 3</a>
+        </td>
+        <td> xx €</td>
+        <td>
+        	
+        </td>
+    </tr> <tr>
+    	<td>
+        	 <a href="detalle_producto.php" idProducto="4">Producto 4</a>
+        </td>
+        <td> xx €</td>
+        <td>
+        	
+        </td>
+    </tr>
+    
+
+</table>
+
+El titulo del producto seleccionado es:
+<b><span id="titulo"></span></b>
+<br>
+El codigo del prodcuto seleccionado es:
+<b><span id="codigo"></span></b>
+<br>
+
+</body>
+</html>

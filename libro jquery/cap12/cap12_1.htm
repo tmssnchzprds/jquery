@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#test1").toggle(
+function () {
+$("form:checkbox").parent().css({"border": "1px solid black"});
+},
+function () {
+$("form:checkbox").parent().css({"border": "none"});
+});
+$("#test2").toggle(
+function () {
+$("form:radio").parent().css({"background": "#9cf"});
+},
+function () {
+$("form:radio").parent().css({"background": "none"});
+});         
+});
+</script>
+<style type="text/css">
+p {margin: 3px;}
+</style>  
+</head>
+<body>
+
+<form action="">
+<p><input type="checkbox">Checkbox 1</p>
+<p><input type="checkbox">Checkbox 2</p>
+<p><input type="checkbox">Checkbox 3</p>
+<p><input type="radio">Radio 1<br /></p>
+<p><input type="radio">Radio 2</p>
+<br>
+Botones de prueba:<br>  
+<button id="test1">Prueba checkbox</button> 
+<button id="test2">Prueba radio</button> 
+</form>
+</body>
+</html>

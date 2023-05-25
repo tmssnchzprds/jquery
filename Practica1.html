@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Jquery ajax</title>
+<meta charset="UTF-8">
+<script type="text/javascript" src="jquery-1.9.1.js"></script>
+       
+<script type="text/javascript">
+    $(document).ready(function() {
+	$("#boton").click(function(){
+		var valor=$("#dni").val();
+	function mostrar(datos){
+		if(datos.nombre==""){
+			$("#respuesta").html("<br><b>Incorrecto</b> El <u>DNI:"+valor+"</u>  no pertenece a un alumno del aula.");}else{
+			$("#respuesta").html("<br><b>Correcto</b> El <u>DNI:"+valor+"</u>  pertenece a un alumno del aula.<br><br>");	
+			$.each(datos,function(propiedad,valor) {
+                    $("#respuesta").append("<b>"+propiedad+"</b>:"+valor+"<br>");
+                });
+			}
+		};
+	$.post("comprueba-dni-json.php","dni="+valor,mostrar,"json");
+	});
+});
+</script>    
+        
+    </head>
+    <body>
+Introduzca un DNI<input type="text" name="dni" id="dni">       
+<input type="button" id="boton" value="Pulsa">
+        <div id="respuesta">
+        </div>     
+    </body>
+</html>
+

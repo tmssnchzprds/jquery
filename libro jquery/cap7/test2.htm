@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<style>
+table { margin-top: 20px;
+width: 240px;
+border: 1px solid black; 
+        border-collapse:collapse;}
+td { border: 1px solid black;
+     text-align: center;}
+.top { background-color: #9cf;}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+$(document).ready(function() {
+$("button").click(function() {
+  $("tr:first").nextUntil('tr:not(.bt)').toggle("slow");
+});
+});
+</script>
+<title>JS Bin</title>
+</head>
+<body>
+  <table>
+    <tr class="top">
+      <td>top 1</td>
+      <td>top 1</td>
+      <td>top 1</td>
+    </tr>
+    <tr class="bt">
+      <td>bt row 1</td>
+      <td>bt row 1</td>
+      <td>bt row 1</td>
+    </tr>
+    <tr class="bt">
+      <td>bt row 2</td>
+      <td>bt row 2</td>
+      <td>bt row 2</td>
+    </tr>
+    <tr class="bt">
+      <td>bt row 3</td>
+      <td>bt row 3</td>
+      <td>bt row 3</td>
+    </tr>
+    <tr class="top">
+      <td>top 2</td>
+      <td>top 2</td>
+      <td>top 2</td>
+    </tr>
+    <tr class="bt">
+      <td>bt row 4</td>
+      <td>bt row 4</td>
+      <td>bt row 4</td>
+    </tr>
+    
+  </table>
+<p><button type="button">Cambiar</button></p>
+</body>
+</html>
+

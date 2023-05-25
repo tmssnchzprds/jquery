@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#galeria a").append("<span></span>");
+$("#galeria a").hover(function(){
+$(this).children("span").fadeIn(600);
+},function(){
+$(this).children("span").fadeOut(200);
+});
+});
+</script>
+<style type="text/css">
+#galeria { width: 100%; 
+            overflow: hidden;}
+#galeria a { position:relative; 
+              float:left;
+              margin:5px;}
+#galeria a span { background-image:url(loupe.png); 
+                   background-repeat:no-repeat;         
+                   width:30px; 
+                   height:30px; 
+                   display:none;
+                   position:absolute;  
+                   left:15px; 
+                   top:15px;}
+#galeria img { border: solid 1px black; 
+                padding:5px;}
+</style>
+</head>
+<body>
+<div id="galeria">
+<a href="tornado.jpg">
+<img src="tornado_min.jpg" alt="" />
+</a>
+<a href="tornado1.jpg">
+<img src="tornado1_min.jpg" alt="" />
+</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.validate.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#formulario").validate();
+});
+</script>
+<style type="text/css">
+label { width: 5em; 
+        float: left; }
+label.error { float: none; 
+              color: red; 
+              padding-left: .5em; 
+              vertical-align: top; }
+p { clear: both; }
+.submit { margin-left: 6em; }
+</style>
+</head>
+<body>	
+<form id="formulario" action="">
+<p>
+<label for="cnombre">Nombre *:</label>
+<input type="text" id="cnombre" name="nombre" size="20" class="required" minlength="2" />
+</p>
+<p>
+<label for="capellidos">Apellidos:</label>
+<input type="text" id="capellidos" name="apellidos" size="20" minlength="2" />
+</p>
+<p>
+<label for="cemail">Email * :</label>
+<input type="text" id="cemail" name="email" size="20" class="required email" />
+</p>
+<p>
+<input class="submit" type="submit" value="Enviar"/>
+</p>
+</form>
+</body>
+</html>

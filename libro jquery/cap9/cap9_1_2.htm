@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js" ></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#on").click(function(){
+$("div").filter(function (index) {
+return index == 1 || $(this).attr("id") == "cinco";
+})
+.css("border-color", "black");
+});
+$("#out").click(function(){
+$("div").filter(function (index) {
+return index == 1 || $(this).attr("id") == "cinco";
+})
+.css("border-color", "white");
+});
+});
+</script>
+<style type="text/css">
+#on {margin-left: 8px;}
+div { width:40px; 
+      height:40px; 
+      margin:5px; 
+      float:left; 
+      border:2px solid white; 
+      background-color: #9cf;}
+</style>
+</head>
+<body>
+<br />
+<button id="on">On</button> <button id="out">Out</button> 
+<br />
+<div id="un"></div>
+<div id="dos"></div>
+<div id="tres"></div>
+<div id="cuatro"></div>
+<div id="cinco"></div>
+</body>
+</html>

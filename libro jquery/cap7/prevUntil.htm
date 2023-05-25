@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<style type="text/css">
+dd { width: 150px;}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$("#def2").prevUntil("dt")
+.css("background-color", "#9cf")
+});
+</script>
+</head>
+<body>
+<dl>
+<dt>Definición 1</dt>
+<dd>Descripción 1a</dd>
+<dd>Descripción 1b</dd>
+<dd>Descripción 1c</dd>
+<dd>Descripción 1d</dd>
+<dt id="def2">Definición 2</dt>
+<dd>Descripción 2a</dd>
+<dd>Descripción 2b</dd>
+</dl>
+</body>
+</html>

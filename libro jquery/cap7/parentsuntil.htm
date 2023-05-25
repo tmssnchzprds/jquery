@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<style type="text/css">
+#division1 { width: 250px;
+             border: 1px solid black;
+padding: 2px;}
+#division2 { width: 200px;
+             border: 1px solid black;
+margin-left: 25px;
+padding: 2px;}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('li.start').parentsUntil('body')
+      .css('background-color', '#9cf');
+});
+</script>
+</head>
+<body>
+<p id="paragraphe">Ejemplo</p>
+<div id="division1">
+División 1
+<div id="division2">
+División 2
+<ul>
+<li>Ítem 1</li>
+<li>Ítem 2</li>
+<li class="start">Ítem 3</li>
+<li>Ítem 4</li>
+</ul>
+</div>
+<br>
+</div>
+</body>
+</html>

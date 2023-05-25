@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+$("textarea").scroll(function () { 
+$("span").css({"display": "inline"}).fadeOut("slow"); 
+});
+});
+</script>
+<style type="text/css">
+span { display:none;}
+</style>
+</head>
+<body>
+<p>Visualice todo el texto</p>
+<textarea cols="28" rows="5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed non risus. Lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim es eleifend mi, non fermentum diam nisl sit amet erat. Duis semper.</textarea>
+<p><span>¡Está utilizando el scroll!</span></p>
+</body>
+</html>

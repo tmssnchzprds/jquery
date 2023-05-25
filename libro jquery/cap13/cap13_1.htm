@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.mi_tooltip.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+var options = {
+offsetX: 30,
+offsetY: 5,
+infobullecss: "infobulle"
+};
+$("a.info").mi_tooltip(options);
+});
+</script>
+<style type="text/css">
+.infobulle { width: 150px;
+             padding: 3px;
+             background-color: #9CF;
+             border: black 1px solid;
+             color: black;}
+a {color: black}
+</style>
+</head>
+<body>
+<p><a href="#" rel="Explicación del enlace 1" class="info">Enlace 1</a></p>
+<p><a href="#" rel="Explicación del enlace 2" class="info">Enlace 2</a></p>
+<p><a href="#" rel="Explicación del enlace 3" class="info">Enlace 3</a></p>
+</body>
+</html>

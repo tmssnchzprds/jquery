@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AJAX</title>
+<script type="text/javascript" src="jquery-1.9.1.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#traer").click(function(){
+		$("#respuesta").load("respuesta.asp","codigo=1",function(datos,estado,obfAjax){
+			/*
+			alert(datos);
+			alert(estado);
+			alert(objAjax);
+			*/
+			if (estado=="error")
+			{
+				$("#respuesta").html("Pagina no encontrada")
+				}
+			});
+	});
+});
+</script>
+</head>
+
+<body>
+<input type="button" value="traer" id="traer">
+<div id="respuesta"></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.jqDock.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript">
+//<![CDATA[
+jQuery(function($){
+$('div.demo>img').each(function(i){
+$(this).one('click', function(){ location.href = 'index.php?dt='+(i%5); return false; });
+});
+$('div.demo').each(function(i){ 
+var opts = { align: [ 'bottom', 'right', 'top' , 'middle', 'left', 'center' ][i] || 'bottom' 
+, size:         [  48     ,  48    ,  48   ,  48     ,  36   ,  60      ][i] || 36       //default
+, distance:     [  60     ,  60    ,  60   ,  60     ,  48   ,  80      ][i] || 54       //default
+, coefficient : [  1.5    ,  1.5   ,  1.5  ,  1      ,  1.5  ,  1.5     ][i] || 1.5      //default
+, labels:       [  true   ,  'mc'  ,  true ,  'br'   ,  true ,  false   ][i] || false    //default
+, duration:     500 //default              
+};
+$(this).jqDock(opts);
+});
+$('div.demo a>img').not($('#menu1 a>img')).bind('click', function(){
+var Href = $(this).parent().get(0).href;
+if(Href && !/^javascript:/i.test(Href)){ 
+location.href = Href;
+}else{ 
+$(this).parent().trigger('click');
+}
+return false;
+});
+});
+//]]>
+</script>
+</head>
+<body>
+<div id="menu6" class="demo">
+<a href="#"><img alt="" src="doc.png" /></a>
+<a href="#"><img alt="" src="htm.png" /></a>
+<a href="#"><img alt="" src="ini.png" /></a>
+<a href="#"><img alt="" src="mp3.png" /></a>
+<a href="#"><img alt="" src="pdf.png" /></a>
+<a href="#"><img alt="" src="swf.png" /></a>
+</div>
+</body>
+</html>

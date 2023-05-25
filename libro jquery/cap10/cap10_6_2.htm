@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('#letra_a').click(function() {
+$('#lexico').hide().load('letra_a.htm', function() {
+$(this).slideDown(1000);
+});
+return false;
+});
+$('#letra_b').click(function() {
+$('#lexico').hide().load('letra_b.htm', function() {
+$(this).slideDown(1000);
+});
+return false;
+});
+});
+</script>
+<style type="text/css">
+body { font: 62.5% Arial, Verdana, sans-serif;} 
+a {color: black}
+#container { font-size: 1.2em;
+             margin: 10px 20px;
+width: 360px;}
+#header { margin-top: 20px;
+          margin-bottom: 10px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid black;}
+#alfabeto { float: left;
+            width: 30px;
+            padding-right: 10px;
+            margin-right: 10px; }
+#lexico { float: left;
+           width: 300px;}
+</style>
+</head>
+<body>
+<div id="container">
+<div id="header">
+<h2>Pequeño léxico informático</h2>
+</div>  
+<div id="alfabeto">
+<div id="letra_a">
+<h3><a href="#">A</a></h3>
+</div>
+<div id="letra_b">
+<h3><a href="#">B</a></h3>
+</div>   
+<div><h3>C</h3></div>   
+<div><h3>D</h3></div>   
+<div><h3>E</h3></div> 
+<div><h3>F</h3></div> 
+<div><h3>G</h3></div>  
+<div><h3>Etc</h3></div>         
+</div>
+<div id="lexico">
+</div>
+</div>
+</body>
+</html>

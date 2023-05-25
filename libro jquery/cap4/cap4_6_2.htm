@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script src="jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+this.zoom_imagen = function(){	
+xOffset = 10;
+yOffset = 30;
+$("a.zoom").hover(function(e){
+this.texto = this.title;
+this.title = "";	
+var leyenda = (this.texto != "") ? "<br/>" + this.texto: "";
+$("body").append("<p id='zoom'><img src='"+ this.href +"' alt='Ver imagen' />"+ leyenda +"</p>");				
+$("#zoom")
+.css("top",(e.pageY - xOffset) + "px")
+.css("left",(e.pageX + yOffset) + "px")
+.fadeIn("slow");						
+},
+function(){
+this.title = this.texto;	
+$("#zoom").remove();
+});	
+$("a.zoom").mousemove(function(e){
+$("#zoom")
+.css("top",(e.pageY - xOffset) + "px")
+.css("left",(e.pageX + yOffset) + "px");
+});			
+};
+$(document).ready(function(){
+zoom_imagen();
+});
+//]]>
+</script>
+<style type="text/css">
+body { margin: 0px;
+	 padding: 10px;
+	 font:80% Arial, sans-serif;}
+h2 { clear:both;
+     font-size:160%;
+     font-weight:normal;
+     margin: 0px;
+     padding-top: 10px;
+     padding-bottom: 15px;}
+a { text-decoration:none;
+    color:black;}
+img { border: 1px solid black;}
+ul,li { margin: 0px;
+	  padding: 0px;}
+li { list-style: none;
+     float: left;
+     display: inline;
+     margin-right: 10px;}
+#zoom { position: absolute;
+	     border: 1px solid #333;
+	     background: #333;
+	     padding: 3px;
+	     display: none;
+	     color: #fff;}
+</style>
+</head>
+<body>
+<h2>Efecto de zoom con leyenda</h2>
+<ul>
+<li><a href="osos1.jpg" class="zoom" title="Osos polares en peligro"><img src="pt_osos1.jpg" alt="" /></a></li>
+<li><a href="osos2.jpg" class="zoom" title="Osos polares en peligro"><img src="pt_osos2.jpg" alt="" /></a></li>
+<li><a href="osos3.jpg" class="zoom" title="Osos polares en peligro"><img src="pt_osos3.jpg" alt="" /></a></li>
+</ul>
+</body>
+</html>

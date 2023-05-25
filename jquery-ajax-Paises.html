@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Jquery ajax paises</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-1.9.1.js"></script>
+       
+        <script type="text/javascript">
+            $(document).ready(function() {
+            
+             function antes() {
+                 $("#loader").html("<img src='ajax-loader.gif'>");
+            
+             }
+            
+             function mostrar(datos)
+             {
+                  $("#loader").html("");
+                  $("#datos").html("");
+                 //$("#respuesta").html(datos.poblacion);
+                 /*var HTML="";
+                 HTML+="<tr><td>poblacion</td><td>"+datos.poblacion+"</td></tr>";
+                 HTML+="<tr><td>superficie</td><td>"+datos.superficie+"</td></tr>";
+                 HTML+="<tr><td>capital</td><td>"+datos.capital+"</td></tr>";
+                 HTML+="<tr><td>idioma</td><td>"+datos.idioma+"</td></tr>";
+                 $("#datos").html(HTML);
+                 */
+                // VERSION FOR EACH
+                $.each(datos,function(propiedad,valor) {
+                    $("#datos").append("<tr><td>"+propiedad+"</td><td>"+valor+"</td></tr>");
+                });
+                 
+                 
+             }
+             
+             function problemas(objAjax,nombreError,texto)
+             {  
+                 $("#loader").html("");
+                 $("#errores").html(nombreError+" "+texto);
+             }
+        
+             $("#paises").change(function() {  
+                var paisSeleccionado=$(this).val();
+                    
+                    $.ajax({
+                            url:"paises-json.php",
+                            type:"GET",
+                            dataType:"json",
+                            data:"pa="+paisSeleccionado,
+                            success:mostrar,
+                            beforeSend:antes,
+                            error:problemas,
+                           
+                            //data:{pa:paisSeleccionado}
+                    });
+                    
+                   //$.getJSON("paises-json.php","pa="+paisSeleccionado,mostrar);
+                }); 
+                
+            });
+        </script>    
+        
+    </head>
+    <body>
+        
+        <select name="paises" id="paises">
+            <option value="no existe">Selecciona un pais</option>
+            <option value="Chile">Chile</option>
+            <option value="Spain">España</option>
+            <option value="Brasil">Brasil</option>
+            
+            
+        </select>
+        <br><br><br><br>        
+        <div id="respuesta">
+                            <h2> Datos del pais </h2>
+                            <table border="1">
+                                <thead>
+                                <tr><th colspan="2">Datos del pais</th></tr>
+                                </thead>
+                                <tbody id="datos">
+                                    
+                                </tbody>
+                            </table>
+        
+        </div>
+        <div id="loader"></div>
+        <div id="errores"></div>
+        
+    </body>
+</html>
+

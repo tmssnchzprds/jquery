@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+$("a").click(function(){
+$("div").toggleClass("cacher");
+});
+});
+</script>
+<style type="text/css">
+a{color: black}
+div { width: 255px; 
+      padding: 3px; 
+      border: 1px dotted black; 
+      cursor: pointer;}
+.cacher {display: none;}
+</style>
+</head>
+<body>
+<p><a href="#">In / Out</a></p>
+<div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</div>
+<p>Resto de la página...</p>
+</body>
+</html>

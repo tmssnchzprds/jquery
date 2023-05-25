@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr">
+    
+    <head>
+        <style type="text/css">
+            body, html { font-family:helvetica,arial,sans-serif; font-size:90%; }
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dojo/dojo.xd.js"
+        djConfig="parseOnLoad: true">
+        </script>
+        <script>
+            // Load the basic mobile widgetry and support code.
+            dojo.require("dojox.mobile");
+
+            // Load the lightweight parser.  dojo.parser can also be used, but it requires much more code to be loaded.
+            dojo.require("dojox.mobile.parser");
+
+            // Load the compat layer if the incoming browser isn't webkit based
+            dojo.requireIf(!dojo.isWebKit, "dojox.mobile.compat");
+        </script>
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dijit/themes/claro/claro.css"
+        />
+        <link href="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dojox/mobile/themes/iphone/iphone.css"
+        rel="stylesheet">
+        </link>
+    </head>
+    
+    <body class=" claro ">
+        <div id="main" dojoType="dojox.mobile.View" selected="true">
+            <h1 dojoType="dojox.mobile.Heading">
+                Settings
+            </h1>
+            <ul dojoType="dojox.mobile.EdgeToEdgeList">
+                <li dojoType="dojox.mobile.ListItem" icon="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dojox/mobile/tests/images/i-icon-1.png">
+                    Coolness Mode
+                    <div class="mblItemSwitch" dojoType="dojox.mobile.Switch">
+                    </div>
+                </li>
+                <li dojoType="dojox.mobile.ListItem" icon="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dojox/mobile/tests/images/i-icon-2.png"
+                rightText="mac" moveTo="disco">
+                    Disco Room
+                </li>
+                <li dojoType="dojox.mobile.ListItem" icon="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dojox/mobile/tests/images/i-icon-3.png"
+                rightText="AcmePhone" moveTo="disco">
+                    Carrier
+                </li>
+            </ul>
+        </div>
+        <div id="disco" dojoType="dojox.mobile.View">
+            <h1 dojoType="dojox.mobile.Heading">
+                Hello
+            </h1>
+            <ul dojoType="dojox.mobile.EdgeToEdgeList">
+                <ul dojoType="dojox.mobile.EdgeToEdgeList">
+                    <li dojoType="dojox.mobile.ListItem" moveTo="main">
+                        I'm a square, man.
+                    </li>
+                    <li dojoType="dojox.mobile.ListItem" moveTo="main">
+                        Leave Disco Room
+                    </li>
+                </ul>
+        </div>
+           </body>
+
+</html>

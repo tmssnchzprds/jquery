@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<style type="text/css">
+body{ font-family: Arial,sans-serif;
+      font-size: 0.9em;
+      margin-left: 0px;}
+</style>
+<script src="jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('li:has(ul)')
+.click(function(){
+if ($(this).children().is(':hidden')) {
+$(this).css('list-style-imagen','url(minus.gif)')
+       .children().show();
+}
+else {
+$(this).css('list-style-imagen','url(mas.gif)')
+       .children().hide();
+}
+return false;
+})
+.css('cursor','pointer')
+.click();
+$('li:not(:has(ul))').css({cursor: 'default',
+                         'list-style-imagen':'none'
+});
+});
+</script>
+</head>
+<body>
+<ul>
+<li>Capítulo 1</li>
+<li>Capítulo 2</li>
+<li>Capítulo 3
+<ul>
+<li>Punto 3.1</li>
+<li>Punto 3.2
+<ul>
+<li>Ítem 3.2.1</li>
+<li>Ítem 3.2.2</li>
+<li>Ítem 3.2.3
+<ul>
+<li>Sub-ítem 3.2.3.1</li>
+<li>Sub-ítem 3.2.3.2</li>
+<li>Sub-ítem 3.2.3.3</li>
+<li>Sub-ítem 3.2.3.4</li>
+<li>Sub-ítem 3.2.3.5</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Punto 3.3</li>
+<li>Punto 3.4
+<ul>
+<li>Ítem 3.4.1</li>
+<li>Ítem 3.4.2</li>
+<li>Ítem 3.4.3</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Capítulo 4
+<ul>
+<li>Punto 4.1</li>
+<li>Punto 4.2
+<ul>
+<li>Ítem 4.2.1</li>
+<li>Ítem 4.2.2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Capítulo 5</li>
+</ul>
+</body>
+</html>

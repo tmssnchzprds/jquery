@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<style type="text/css">
+body { font-family: Arial sans-serif; 
+       font-size: 0.9em;}
+ul { list-style-type: none; 
+     width: 11em;
+     border: 1px solid black;}
+li { pagdding: 5px;}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">	
+//<![CDATA[	
+$(document).ready(function(){				
+$("#boton").click(function(){
+var año = $("#año").val();
+var carburante = $("#carburante").val();
+var selector_año = '';
+var selector_carburante = '';					
+if (año == "todos" && carburante == "todos"){
+$(".item").show();
+}
+else {
+if (carburante != "todos"){
+selector_carburante = '.' + carburante
+}		
+if (año != "tods")
+{
+selector_año = '.' + año
+}
+$(".item").hide();
+$("li"). filter(selector_carburante + selector_año).show();
+}	
+});
+});
+//]]>
+</script>
+</head>
+<body>
+Seleccione el año: <select id="año"> 
+<option selected="selected" value="todas">Todos los años</option> 
+<option value="2009">2009</option> 
+<option value="2008">2008</option> 
+<option value="2007">2007</option></select> 
+<br />
+Seleccione el carburante: <select id="carburante">
+<option selected="selected" value="todos" >Todos los carburantes</option> 
+<option value="essence">Gasolina</option> 
+<option value="diesel">Diesel</option>
+</select> 
+<br />
+<input id="boton" type="button" value="Filtrar la lista" /> 
+<ul>
+<li class="item 2009 essence">Renault Twingo</li> 
+<li class="item 2008 essence">Renault Clio</li> 
+<li class="item 2007 diesel">Renault Laguna</li> 
+<li class="item 2008 diesel">Renault Scenic </li> 
+<li class="item 2007 diesel">Peugeot 607</li> 
+<li class="item 2009 essence">Peugeot 207</li> 
+<li class="item 2008 diesel">Peugeot 307</li> 
+<li class="item 2008 diesel">Peugeot 407</li> 
+<li class="item 2007 essence">Citroen C2</li> 
+<li class="item 2008 diesel">Citroen C3 Picasso</li>
+<li class="item 2007 diesel">Citroen C4</li>
+<li class="item 2009 diesel">Citroen C6 </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<link rel="stylesheet" href="blue/style.css" type="text/css" />
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.tablesorter.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$("table").tablesorter({
+sortList: [[0,0],[1,0],[2,0],[3,0]]
+});
+}); </script>
+</head>
+<body>
+<p></p>
+<div id="demo">
+<table cellspacing="1" class="tablesorter">
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Apellidos</th>
+<th>Edad</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ángel</td>
+<td>Sánchez</td>
+<td>28</td>
+<td>9.99</td>
+</tr>
+<tr>
+<td>María</td>
+<td>González-Aller</td>
+<td>33</td>
+<td>19.99</td>
+</tr>
+<tr>
+<td>María</td>
+<td>Sánchez</td>
+<td>18</td>
+<td>15.89</td>
+</tr>
+<tr>
+<td>José Antonio</td>
+<td>López</td>
+<td>45</td>
+<td>153.19</td>
+</tr>
+<tr>
+<td>Blanca</td>
+<td>Zavala</td>
+<td>22</td>
+<td>13.19</td>
+</tr>
+<tr>
+<td>Pablo</td>
+<td>García</td>
+<td>22</td>
+<td>42.98</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

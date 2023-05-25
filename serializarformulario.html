@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Jquery Problema de enlace</title>
+<script type="text/javascript" src="jquery-1.9.1.js">
+</script>
+<script>
+$(document).ready(function() {
+	$("form").submit(function(e){
+		e.preventDefault();
+		alert("has disparado el formulario");
+		/*var nombre=$("#nombre").val();
+		var apellido=$("#apellido").val();
+		var dni=$("#dni").val();
+		var datos="nombre="+nombre+"&apellido="+apellidos+"$dni="+dni;*/
+		var datos=$(this).serialize();
+		$("#chorroDaros").html(datos);
+		});
+});
+</script>
+</head>
+<body>
+	<span id="chorroDaros"></span>
+	<form name="formulario1" action="recibe.php" method="get">
+		<table border="1" align="center" width="80%">
+			<tr>
+				<th colspan="2">ALTA CLIENTES
+                </th>
+			</tr>
+			<tr>
+				<td>Nombre:
+                </td>
+				<td><input type="text" name="nombre" id="nombre" maxlength="20" required autofocus>
+                </td>
+			</tr>
+			<tr>
+				<td>Apellidos:
+                </td>
+				<td><input type="text" name="apellidos" id="apellido" maxlength="20" required>
+                </td>
+			</tr>
+			<tr>
+				<td>DNI:
+                </td>
+				<td><input type="text" name="dni" maxlength="9" placeholder="00000001L" id="dni" required pattern="[0-9]{8}[A-z]{1}">
+                </td>
+			</tr>
+			<tr>
+				<td>Dirección:
+                </td>
+				<td><input type="text" name="direccion" maxlength="40" required>
+                </td>
+			</tr>
+			<tr>
+				<td>Población:
+                </td>
+				<td><input type="text" name="poblacion" maxlength="40">
+                </td>
+			</tr>
+			<tr>
+				<td>Provincia:
+                </td>
+				<td><select name="provincia">
+						<option value="Caceres">Caceres</option>
+ 					    <option value="Badajoz">Badajoz</option>
+			        </select>
+                </td>
+			</tr>
+			<tr>
+				<td>Telf.Fijo:
+                </td>
+				<td><input type="tel" name="telffijo" placeholder="+34924999999" pattern="[\+]\d{2}\d{9}">
+                </td>
+			</tr>            
+			<tr>
+				<td>Telf.Movil:
+                </td>
+				<td><input type="tel" name="telfmovil" maxlength="7" pattern="[0-9]{9}">
+                </td>
+			</tr>            
+			<tr>
+				<td>Email:
+                </td>
+				<td><input type="email" name="email" maxlength="50" placeholder="name@example.com" required>
+                </td>
+			</tr>
+			<tr>
+				<td>F.Nacimiento:
+                </td>
+				<td><input type="date" name="fnacimiento">
+                </td>
+			</tr>
+			<tr>
+				<td>Login:
+                </td>
+				<td><input type="text" name="login" maxlength="10" required>
+                </td>
+			</tr>
+			<tr>
+				<td>Password:
+                </td>
+				<td><input type="password" name="password" maxlength="10" required>
+                </td>
+			</tr>
+			<tr>
+				<td>Repassword:
+                </td>
+				<td><input type="password" name="repassword" maxlength="10" required>
+                </td>
+			</tr>
+			<tr>
+				<td colspan="2"><center><input type="submit" name="boton" value="Enviar"> &nbsp;&nbsp;
+<input type="reset" name="buton" value="Deshacer"></center>
+                </td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+var i = 0;
+$("div.overout").mouseover(function(){
+$("#mostrar").text("mouse over");
+$("#contador").text(++i);
+})
+.mouseout(function(){
+$("#mostrar").text("mouse out");
+});
+});
+</script>
+<style type="text/css">
+div.out { width: 220px;
+          height: 125px;
+          margin-left: 15px;
+          background-color: #9cf;}
+div.in { width: 70%;
+         height: 55%;
+         background-color: white;
+         margin: 15px auto;}
+p { line-height:0.9em;
+    padding:0;}
+#mostrar { margin-top: 10px;
+            margin-left: 15px;
+            font-size: 1.2em;}
+#contador { margin-left: 15px;
+            font-size: 1.2em;}
+</style>
+</head>
+<body>
+<div class="out overout"><p>&nbsp;</p>
+<div class="in overout"></div>
+</div>
+<div id="mostrar"></div>
+<div id="contador"></div>
+</body>
+</html>

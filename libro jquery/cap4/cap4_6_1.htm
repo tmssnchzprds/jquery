@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js" ></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$('input').click(function(){
+var texto = $('p');
+var tamaño = texto.css('fontSize');
+var nombre = parseFloat(tamaño, 10);
+var unidad = tamaño.slice(-2);
+if(this.id == 'mas') {
+nombre *= 1.2;
+}
+else if (this.id == 'menos'){
+nombre /=1.2;
+}
+texto.css('fontSize', nombre + unidad);
+});
+});
+</script>
+<style type="text/css">
+p { font-size: 1em;}
+</style>
+</head>
+<body>
+<input type="button" value="Más grande" id="mas" />
+<input type="button" value="Más pequeño" id="menos" />
+<p>Lorem ipsum dolor sit amet, magna adipiscing elit. Quisque at cursus est. Phasellus id ligula massa. Quisque id lacus mauris. Suspendisse vehicula tortor eu 
+magna.</p>
+</body>
+</html>

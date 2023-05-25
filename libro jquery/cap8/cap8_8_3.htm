@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function() {
+$("a").filter(function() {
+return this.hostname !== location.hostname;
+})
+.after('<img src="external.png" class="external">');
+});
+//]]>
+</script>
+<style type="text/css">
+a { color: black; 
+    text-decoration: none;}
+.external { border: none;
+            margin-left: 10px;}
+</style>
+</head>
+<body>
+<a href="http://www.editions-eni.fr/" title="Enlace externe" >Ediciones Eni</a><br />
+<a href="#">Enlace interno</a><br />
+<a href="#">Enlace interno</a><br />
+</body>
+</html>

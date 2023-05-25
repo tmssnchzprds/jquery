@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery</title>
+<script type="text/javascript" src="jquery-1.9.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() { 
+	  // primera forma callback
+                
+                $("#enlace").click(function() {
+                    
+                    $("#parrafo").hide("slow",fin);
+                });
+               
+                // Segunda forma de callback
+                
+                $("#enlace").click(function() {
+                    
+                    $("#parrafo").hide("slow",function() 
+                    {alert("Ha terminado de ocultarse");}
+                                       );
+                });
+                
+                
+                
+                function fin() {
+                    alert("Ha terminado de ocultarse");
+                }
+                
+});
+</script>
+</head>
+<body>
+<a href="#" id="enlace">Ocultar</a>
+<br>
+<p id="parrafo">Este parrafo desaparecera</p>
+</body>
+</html>

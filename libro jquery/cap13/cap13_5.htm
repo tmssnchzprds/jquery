@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.easydrag.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#box").easydrag();
+});
+</script>
+<style type="text/css">
+div { position: relative; 
+      width: 75px; 
+      height: 75px;
+      border: 1px solid black;
+      background-color: #9cf;} 
+</style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

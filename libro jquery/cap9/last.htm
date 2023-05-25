@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<style type="text/css">
+.style{ background-color: #9cf;}
+li { width: 120px;}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('li').last().addClass('style');
+});
+</script>
+</head>
+<body>
+<ul>
+<li>Ítem 1</li>
+<li>Ítem 2</li>
+<li>Ítem 3</li>
+<li>Ítem 4</li>
+<li>Ítem 5</li>
+</ul>
+</body>
+</html>

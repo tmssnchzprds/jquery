@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$('button').click(function() {
+var str = $("form").serialize();
+$("#resultado").text(str);
+});
+});
+</script>
+<style type="text/css">
+div { margin-bottom: 8px;}
+p { margin-top: 8px; 
+    font-size:14px; 
+    border: 1px solid black;}
+</style>
+</head>
+<body>
+<form action="">
+<div>Nombre: <input type="text" name="nombre" id="nombre" /></div>
+<div>Apellidos: <input type="text" name="apellidos" id="apellidos" /></div>
+<div>Mail: <input type="text" name="mail" id="mail" /></div>
+<div>
+<input type="radio" name="masc" /> Hombre<br />
+<input type="radio" name="fem" /> Mujer<br />
+</div>
+<div>
+Navegador utilizado:<br />
+<input type="checkbox" name="ie" /> Internet Explorer<br />
+<input type="checkbox" name="ff" /> Firefox<br />
+<input type="checkbox" name="saf" /> Safari<br />
+<input type="checkbox" name="autre_nav" /> Otro navegador
+</div>
+</form>
+<button>Serializar</button>
+<p id="resultado">&nbsp;</p>
+</body>
+</html>

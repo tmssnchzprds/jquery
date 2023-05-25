@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<link type="text/css" rel="stylesheet" href="visualize.jQuery.css"/>
+<link type="text/css" rel="stylesheet" href="demopage.css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<!--[if IE]><script type="text/javascript" src="excanvas.compiled.js"></script><![endif]-->
+<script type="text/javascript" src="visualize.jQuery.js"></script>
+<script type="text/javascript">
+$(function(){
+//make some charts
+$('table').visualize({type: 'pie', pieMargin: 10, title: 'Usado por individuo'});	
+$('table').visualize({type: 'line'});
+$('table').visualize();
+});
+</script>
+</head>
+<body>	
+<table >
+<caption>uso individual por ítem</caption>
+<thead>
+<tr>
+<td></td>
+<th>Ítem 1</th>
+<th>Ítem 2</th>
+<th>Ítem 3</th>
+<th>Ítem 4</th>
+<th>Ítem 5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>A</th>
+<td>190</td>
+<td>160</td>
+<td>40</td>
+<td>120</td>
+<td>100</td>
+</tr>
+<tr>
+<th>B</th>
+<td>5</td>
+<td>40</td>
+<td>30</td>
+<td>45</td>
+<td>80</td>
+</tr>
+<tr>
+<th>C</th>
+<td>10</td>
+<td>180</td>
+<td>10</td>
+<td>85</td>
+<td>105</td>
+</tr>
+<tr>
+<th>D</th>
+<td>40</td>
+<td>80</td>
+<td>90</td>
+<td>25</td>
+<td>125</td>
+</tr>		
+</tbody>
+</table>
+</body>
+</html>

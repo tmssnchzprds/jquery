@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#boton1").click(function () {
+$("#div1").empty();
+});
+$("#boton2").click(function () {
+$("#div2").remove();
+});
+});
+</script>
+<style type="text/css">
+#boton1 { margin-left: 25px;
+           display: block;
+           float: left;}
+#boton2 { margin-left: 206px;
+           display: block;}
+#div1 { border: 1px solid black;
+        margin-top: 15px;
+        width: 100px;
+        height: 80px;
+        text-align: center;
+        float: left;}
+#div2 { border: 1px solid black;
+        width: 100px;
+        height: 80px;
+        margin-top: 15px;
+        margin-left: 15px;
+        text-align: center;
+        float: left;}
+</style>
+</head>
+<body>
+<div><button id="boton1">Vaciar</button> <button id="boton2">Eliminar</button></div>
+<div id="div1">
+Texto<br />Texto<br />Texto<br />Texto
+</div>
+<div id="div2">
+Texto<br />Texto<br />Texto<br />Texto
+</div>
+</body>
+</html>

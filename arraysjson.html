@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Jquery Problema de enlace</title>
+<script type="text/javascript" src="jquery-1.9.1.js">
+</script>
+<script>
+$(document).ready(function() {
+	var coches=["mercedes","audi","volvo","ferrari"];
+	/*for (var cocheActual in coches)
+	{
+		alert(cocheActual);
+		}*/
+	$.each(coches,function(indice,valor){
+		alert(valor);
+		});
+	var numeros=[1,2,4,6,7,23];
+	var persona={
+		ojos:"rojos",
+		pelo:"castaño",
+		edad:25,
+		sexo:"masculino",
+		altura:180}
+/*	$.each(persona,function(propiedad,valorPropiedad){
+		alert(propiedad+" "+valorPropiedad);
+		});*/
+	var personas=[{
+		nombre:"pepe",
+		ojos:"rojos",
+		pelo:"castaño",
+		edad:25,
+		sexo:"masculino",
+		altura:180
+},{
+		nombre:"juan",
+		ojos:"azules",
+		pelo:"amarillo",
+		edad:35,
+		sexo:"masculino",
+		altura:120
+},{
+		nombre:"Chino Bayo",
+		ojos:"rojos",
+		pelo:"rubio",
+		edad:25,
+		sexo:"masculino",
+		altura:180}];
+		/*$.each(personas,function(indice){
+		alert("El nombre de la persona con indice"+indice+" es "+personas[indice].nombre);
+		});
+		$.each(personas,function(indice,objActual){
+		alert("El nombre de la persona con indice"+indice+" es "+objActual.nombre);
+		});*/
+		$("#cargarDatos").click(function(){
+			var contenido="";
+			$.each(personas,function(indice,valor){
+			contenido+="<tr>\n";
+			contenido+="<td>"+valor.nombre+"</td>\n";
+			contenido+="<td>"+valor.ojos+"</td>\n";
+			contenido+="<td>"+valor.pelo+"</td>\n";
+			contenido+="<td>"+valor.edad+"</td>\n";
+			contenido+="<td>"+valor.sexo+"</td>\n";
+			contenido+="<td>"+valor.altura+"</td>\n";
+			contenido+="</tr>\n";
+			
+			});
+			$("#datos").html(contenido);
+		});
+});
+</script>
+</head>
+<body>
+	<button id="cargarDatos">Cargar</button>
+    <table width="90%">
+		<thead>
+        	<tr>
+            	<th>Nombre</th>
+                <th>Nombre</th>
+                <th>Nombre</th>
+                <th>Nombre</th>
+                <th>Nombre</th>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody id="datos">
+        
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){ 
+$('<a id="top" name="top"></a>').prependTo('body');
+$("p").after("<a href='#top'>Parte alta de la página</a>");
+$("#contenido").after("<div id='foot'><i>Notas a pie de página</i></div>");
+});
+//]]>
+</script>
+<style type="text/css">
+a { color: black;}
+#foot { border-top: 1px solid black;
+        margin-top: 15px;}
+</style>
+</head>
+<body>
+<h2>Título de la página</h2>
+<div id="contenido">
+<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales, nisi eget aliquet interdum, urna risus sodales urna, at auctor nisl tellus rutrum nibh. Pellentesque lorem diam, tincidunt eget tincidunt non, rutrum non felis. In hac habitasse platea dictumst. Ut nibh leo, placerat a tristique consequat, vestibulum at tortor. In nec tristique turpis.</p>
+<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales, nisi eget aliquet interdum, urna risus sodales urna, at auctor nisl tellus rutrum nibh. Pellentesque lorem diam, tincidunt eget tincidunt non, rutrum non felis. In hac habitasse platea dictumst. Ut nibh leo, placerat a tristique consequat, vestibulum at tortor. In nec tristique turpis.</p>
+<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales, nisi eget aliquet interdum, urna risus sodales urna, at auctor nisl tellus rutrum nibh. Pellentesque lorem diam, tincidunt eget tincidunt non, rutrum non felis. In hac habitasse platea dictumst. Ut nibh leo, placerat a tristique consequat, vestibulum at tortor. In nec tristique turpis.</p>
+<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales, nisi eget aliquet interdum, urna risus sodales urna, at auctor nisl tellus rutrum nibh. Pellentesque lorem diam, tincidunt eget tincidunt non, rutrum non felis. In hac habitasse platea dictumst. Ut nibh leo, placerat a tristique consequat, vestibulum at tortor. In nec tristique turpis.</p>
+</div>
+</body>
+</html>

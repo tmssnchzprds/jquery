@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+$("p").append( $("input").map(function(){
+return $(this).val();
+})
+.get().join(", ") );
+});
+</script>
+<style type="text/css">
+p { font-weight: bold; 
+    border: 1px solid black; 
+    padding: 3px; }
+</style>
+</head>
+<body>
+<form action="">
+Nombre: <input type="text" name="nombre" value="Ángel" /><br />
+Ciudad: <input type="text" name="ciudad" value="Madrid" /><br />
+País: <input type="text" name="pais" value="España" /><br />
+Mail: <input type="text" name="mail" value="angel@gmail.com" />
+</form>
+<p><b>Los valores son: </b></p>
+</body>
+</html>

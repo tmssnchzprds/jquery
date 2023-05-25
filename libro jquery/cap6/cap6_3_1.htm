@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Modèle jQuery</title>
+<script src="jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+$("#botonFadeOut").click(function () {
+$("#imagen").fadeOut();
+});
+$("#botonFadeIn").click(function () {
+$("#imagen").fadeIn();
+});
+});
+</script>
+<style type="text/css"> 
+#bloc{ width: 210px;
+       height: 117px;
+       border: 1px solid black;
+       margin-top: 15px;}
+#imagen {margin: 5px;}
+</style>
+</head>
+<body>
+<div>
+<input type="button" id="botonFadeOut" value="Fade Out" />
+<input type="button" id="botonFadeIn" value="Fade In" />
+</div>
+<div id="bloc">
+<img src="eolico3.jpg" alt="" width="200" height="107" id="imagen" />
+</div>
+</body>
+</html>	

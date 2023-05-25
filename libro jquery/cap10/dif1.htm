@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<style type="text/css">
+#consola { font-family: Arial; 
+           font-size: 14px;
+           border: 1px solid black;
+           padding-left: 5px;
+           width: 320px;}
+#bouton { margin-top:15px;
+          margin-bottom: 15px;}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+function log(message) {
+var texto= $("#consola").html();
+var time = new Date().toTimeString();
+time = time.substring(0, time.indexOf(' '));
+texto += time + ": " + message + "<br>";
+$("#consola").html(texto);
+}
+function funcion1() {
+var deferred = $.Deferred(log("Creación del objeto diferido 1"));
+setTimeout(function() {log("La función 1 se ha realizado"); 
+deferred.resolve(log("El objeto diferido 1 tiene el estado resuelto"));},
+1000);
+return deferred;
+}
+function funcion2() {
+var deferred = $.Deferred(log("Creación del objeto diferido 2"));
+setTimeout(function() {log("La función 2 se ha realizado"); 
+deferred.resolve(log("El objeto diferido 2 tiene el estado resuelto<div> <div>"));},
+2000);
+return deferred;
+}
+function run() {
+log("El script empieza");
+$.when(funcion1(), funcion2())
+.then(
+function() {log("<b>La función diferida se ha realizado<b>");},
+function() {log("<i>La función diferida no se ha ejecutado</i>");}
+);
+log("El script termina<div> <div>");
+}
+$(function() {
+$("#bouton").click(function(){
+run();
+});
+});
+</script>
+</head>
+<body>
+<input type="button" value="Comenzar" id="bouton" /><br>
+Consola:
+<div id="consola">&nbsp;</div>
+</body>
+</html>

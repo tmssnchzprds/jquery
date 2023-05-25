@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery</title>
+<script type="text/javascript" src="jquery-1.9.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() { //cargar al final de la pagina
+	
+	$("#boton").click(function() { //igual que onclick()
+			alert("Hola mundo en jquery");
+			
+		}); 
+		$("#parrafo").mouseover(function() {
+			var contenido=$(this).html();
+			alert(contenido);
+			$(this).html("<b> Esto es nuevo </b>");
+			});  
+});
+</script>
+</head>
+<body>
+<input type="button" value="pulsa" id="boton">
+<p id="parrafo">Parrafo <b> Esto esta en negrita</b> </p>
+<p>Parrafo 2</p>
+</body>
+</html>

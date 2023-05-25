@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<style type="text/css">
+body { font-family: Arial; 
+       font-size: 0.9em;}
+ul { list-style-type: none; 
+     width: 8em;
+     border: 1px solid black;}
+li { pagdding: 5px;}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">		
+$(document).ready(function(){				
+$("#boton").click(function(){
+var selection = $("#categoria").val();
+if (selection == "all"){
+//show all items
+$("li").filter(".item").show();
+}
+else {					
+$("li").filter(".item").hide();
+$("li").filter("."+selection).show();
+}					
+});
+});
+</script>
+</head>
+<body>
+Seleccione la categoría: <select id="categoria"> 
+<option selected="selected" value="todas">Todos</option> 
+<option value="manzana">Manzanas</option> 
+<option value="pera">Peras</option>
+<option value="uva">Uvas</option>
+<option value="fresa">Fresas</option>
+</select> 
+<p><input id="boton" type="button" value="Filtrar la lista" /></p>
+<ul>
+<li class="item manzana">Arin</li>
+<li class="item uva">Perleta</li>
+<li class="item fresa">Marjolan</li>
+<li class="item pera">Alexandrín</li>
+<li class="item fresa">Charlot</li>
+<li class="item manzana">Violet</li>
+<li class="item manzana">Chopet</li>
+<li class="item uva">Cardinal</li>
+<li class="item fresa">Mami</li>
+<li class="item pera">Peroil</li>
+<li class="item uva">Calmeria</li>
+</ul>   
+</body>
+</html>

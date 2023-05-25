@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function() {
+$('input:checkbox[name=postre]').click(function(){
+var check = this.checked;
+var val = $(this).val();
+var keys = $("input[name='commande']").val().split(', ');
+var newKeys = new Array();
+var inArray = false;
+$.each(keys, function(i){
+var key=this;
+if (key == val) {
+if (check){
+newKeys.push(key);
+}
+inArray = true;
+} 
+else {
+newKeys.push(key);
+}
+});
+if (!inArray && check) newKeys.push(val);
+$("input[name='commande']").val(newKeys.join(' + '));
+});
+});
+//]]>
+</script>
+</head>
+<body>
+Seleccione un postre:
+<form action="">
+<input value="chocolate" type="checkbox" name="postre" /> Chocolate<br />
+<input value="chantilly" type="checkbox" name="postre" /> Chantilly<br />
+<input value="merengue" type="checkbox" name="postre" /> Merengue<br />
+<input value="fruta" type="checkbox" name="postre" /> Fruta<br />
+<br />
+Su pedido: <br />
+<input type="text" name="commande" size="45" value="Helado de vainilla" /> 
+</form>
+</body>
+</html>
